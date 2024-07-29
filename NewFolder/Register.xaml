@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="firstMaui.NewFolder.Register"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             Title="Register">
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="1,0">
+            <GradientStop Color="#5170ff"
+                          Offset="0.1" />
+            <GradientStop Color="#ff66c4"
+                          Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+
+
+    <Grid RowDefinitions =".4*,.6*">
+        <!--dividing rows-->
+        <!--accessing 30% of the rows-->
+        <!-- <Image Aspect="AspectFill" Source="https://wallup.net/wp-content/uploads/2016/07/20/32216-cityscape-building-HDR-long_exposure-Chicago.jpg"/> -->
+       
+        <Grid >
+            <!--dividing columns for the first row-->
+            <!--adding image in first column-->
+            <Image Source="center.png"
+                   WidthRequest="800"
+                   HeightRequest="325">
+                
+                
+
+
+
+            </Image>
+            
+        </Grid>
+        <!--accessing the second row-->
+        <Grid Grid.Row="1">
+            <!-- <Grid BackgroundColor="DeepPink"/> -->
+            <!-- <Image Aspect="Center" Source="dotnet_bot.png"/> Left.top.right,botton-->
+
+            <RoundRectangle Margin="-5,-30,-5,-2"
+                         CornerRadius="30,30,0,0">
+                
+            </RoundRectangle>
+                         
+            <!--adding labels and align vertically-->
+            <VerticalStackLayout Margin="30,0,30,0">
+                <Label FontAttributes="Bold"
+                       FontSize="Medium"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       Text="Create an account below"
+                       Margin="0,0,0,10"/>
+
+                <!--creating the frames and align them vertically-->
+                <!--stacklayout is for grouping-->
+                <StackLayout Orientation="Horizontal">
+                    <!--username/email ocon frame-->
+                    <Frame ZIndex="1"
+                           HasShadow="True" 
+                           BorderColor="Blue" 
+                           CornerRadius="15" 
+                           HeightRequest="50" 
+                           WidthRequest="50">
+                        <!--email icon -->
+                        <Image Source="uicon.jpeg"
+                               WidthRequest="50" 
+                               HeightRequest="40"
+                               VerticalOptions="FillAndExpand">
+
+                        </Image>
+
+                    </Frame>
+                    <!--username frame-->
+                    <Frame Padding="0"
+                           BackgroundColor="Transparent"  
+                           BorderColor="Blue" 
+                           CornerRadius="15" 
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="Center"
+                           Margin="-20,0,0,0">
+                        <Entry Margin="20,0,0,0" Keyboard="Email" VerticalOptions="Center" Placeholder="user name"/>
+
+                    </Frame>
+
+                </StackLayout>
+                <!--password icon frame-->
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Frame ZIndex="1"
+                           HasShadow="True" 
+                           BorderColor="Blue" 
+                           CornerRadius="15" 
+                           HeightRequest="50" 
+                           WidthRequest="50">
+                        <!--password icon -->
+                        <Image Source="Password.png"
+                               WidthRequest="35" 
+                               HeightRequest="25"
+                               VerticalOptions="Center">
+
+                        </Image>
+
+                    </Frame>
+                    <!--frame for entering password-->
+                    <Frame Padding="0"
+                           BackgroundColor="Transparent"
+                        BorderColor="Blue" 
+                        CornerRadius="15" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="Center"
+                        Margin="-20,0,0,0">
+                        <Entry Margin="20,0,0,0" IsPassword="True" VerticalOptions="Center" Placeholder="password"/>
+
+                    </Frame>
+
+                </StackLayout>
+
+                <!--password icon frame-->
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <Frame ZIndex="1"
+                           HasShadow="True" 
+                           BorderColor="Blue" 
+                           CornerRadius="15" 
+                           HeightRequest="50" 
+                           WidthRequest="50">
+                        <!--password icon -->
+                        <Image Source="Password.png"
+                               WidthRequest="35" 
+                               HeightRequest="25"
+                               VerticalOptions="Center">
+
+                        </Image>
+
+                    </Frame>
+                    <!--frame for entering password-->
+                    <Frame Padding="0"
+                           BackgroundColor="Transparent"
+                           BorderColor="Blue" 
+                           CornerRadius="15" 
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="Center"
+                           Margin="-20,0,0,0">
+                        <Entry Margin="20,0,0,0" IsPassword="True" VerticalOptions="Center" Placeholder="confirm password"/>
+
+                    </Frame>
+
+                </StackLayout>
+
+                <StackLayout Margin="0,0,0,0" Orientation="Horizontal">
+                    <CheckBox IsChecked="False" Color="Blue"/>
+                    <Label Text="Show password" TextColor="Black" FontAttributes="Bold" Margin="-10,13,0,0"/>
+                    <!-- forgot password button -->
+                    
+                </StackLayout>
+                <!-- <StackLayout>
+             <Button Text="forgot password"
+                     BackgroundColor="Transparent" 
+                     TextColor="Red" 
+                     FontAttributes="Bold" 
+                     BorderWidth="0" 
+                     Margin="20,-20,0,0"
+                     HorizontalOptions="Start"/>
+ 
+
+              </StackLayout> -->
+                <Button x:Name="button1"
+                     Margin="0,10,0,0" 
+                     Text="Register" 
+                     WidthRequest="100"
+                     CornerRadius="15"
+    
+                     HorizontalOptions="FillAndExpand"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                    <Label Text=" Already have an account?" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        TextColor="Black"/>
+
+                    <Button x:Name ="login" 
+                        Text="Login here"
+                         BackgroundColor="Transparent"
+                         TextColor="Red"
+                         Clicked="login_Clicked"
+                         FontAttributes="Bold"/>
+
+                </StackLayout>
+
+
+
+
+
+            </VerticalStackLayout>
+
+
+
+
+
+        </Grid>
+    </Grid>
+</ContentPage>
